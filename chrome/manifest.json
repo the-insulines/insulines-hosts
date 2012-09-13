@@ -1,0 +1,20 @@
+{
+	"name": "The Insulines - Demo",
+	"manifest_version": 2,
+	"description": "Demo version of The Insulines",
+	"version": "1.0",
+	"icons": {
+	"16": "Icon_16.png",
+	"128": "Icon_128.png"
+	},
+	"permissions": [
+	  "unlimitedStorage",
+	  "http://*/",
+	  "https://*/"
+	],
+	"app": {
+	"launch": {
+	  "local_path": "insulines.html"
+	}
+	}
+}
