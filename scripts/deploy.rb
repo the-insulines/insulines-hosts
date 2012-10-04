@@ -37,6 +37,7 @@ class Deploy
     end
     return line
   end
+  
   def find_assets
     # Open defines.lua to parse all assets
     traversing_resources = false
@@ -256,7 +257,7 @@ class Deploy
       if f.match('png')
         # Resize image
         image = Magick::Image.read(assets_dir + f).first
-        image.resize!(0.8)
+        image.resize!(0.5)
         image.write(assets_dir + f)
       end
       pbar.inc

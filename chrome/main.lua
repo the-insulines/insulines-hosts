@@ -7,6 +7,10 @@
 DEFAULT_ASSETS_PATH = './insulines-gfx/'
 SOUND_ENGINE = 'fmod'
 
+-- SCREEN_RESOLUTION_X = 960
+-- SCREEN_RESOLUTION_Y = 640
+-- SCREEN_TO_WORLD_RATIO = 1
+
 require 'src/requires'
 
 MOAISim.openWindow ( 'The Insulines', SCREEN_RESOLUTION_X, SCREEN_RESOLUTION_Y )

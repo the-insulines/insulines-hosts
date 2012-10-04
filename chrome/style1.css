@@ -1,5 +1,6 @@
 html, body {
-  background-color: #bbbbbb;
+  font-family: 'Arial';
+  background-color: #111;
   background-repeat: no-repeat;
   background-repeat-x: no-repeat;
   background-repeat-y: no-repeat;
@@ -13,6 +14,10 @@ html, body {
   width: 100%;
 }
 
+
+a {
+  color: #bbb;
+}
 .box {
   background: rgba( 0, 0, 0, .5 );
   color: #CCC;
@@ -41,3 +46,9 @@ html, body {
 #moai-banner {
   padding-top: 15px;
 }
+
+#credits {
+  font-size: 10px;
+  color: #999;
+}
+  
