@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#================================================================#
+# Copyright (c) 2010-2011 Zipline Games, Inc.
+# All Rights Reserved.
+# http://getmoai.com
+#================================================================#
+
+echo "Removing source..."
+rm -rf src
+
+echo "Removing gfx ..."
+rm -rf insulines-gfx
+
+cd ..
+cd scripts
+ruby deploy.rb
+mv src ../chrome/
+mv assets ../chrome/insulines-gfx
+echo "Done!"
