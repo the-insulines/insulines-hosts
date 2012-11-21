@@ -1355,8 +1355,8 @@
 					"../../../moai-sdk/bin/ios/universal/libmoai-ios-tapjoy.a",
 				);
 				PRODUCT_NAME = "The Insulines";
-				PROVISIONING_PROFILE = "46956714-7993-45B6-B6C6-2A23EE2AB258";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "46956714-7993-45B6-B6C6-2A23EE2AB258";
+				PROVISIONING_PROFILE = "47FAFACA-7382-4DCD-92BE-BE46A96676DA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "47FAFACA-7382-4DCD-92BE-BE46A96676DA";
 			};
 			name = Debug;
 		};
@@ -1374,7 +1374,7 @@
 					"../../../moai-sdk/bin/ios/universal/libmoai-ios-tapjoy.a",
 				);
 				PRODUCT_NAME = "The Insulines";
-				PROVISIONING_PROFILE = "46956714-7993-45B6-B6C6-2A23EE2AB258";
+				PROVISIONING_PROFILE = "47FAFACA-7382-4DCD-92BE-BE46A96676DA";
 			};
 			name = Release;
 		};
@@ -1398,7 +1398,7 @@
 					"-force_load",
 					"../../../moai-sdk/bin/ios/universal/libmoai-ios-tapjoy.a",
 				);
-				PROVISIONING_PROFILE = "46956714-7993-45B6-B6C6-2A23EE2AB258";
+				PROVISIONING_PROFILE = "47FAFACA-7382-4DCD-92BE-BE46A96676DA";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "46956714-7993-45B6-B6C6-2A23EE2AB258";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1427,7 +1427,7 @@
 					"-force_load",
 					"../../../moai-sdk/bin/ios/universal/libmoai-ios-tapjoy.a",
 				);
-				PROVISIONING_PROFILE = "46956714-7993-45B6-B6C6-2A23EE2AB258";
+				PROVISIONING_PROFILE = "47FAFACA-7382-4DCD-92BE-BE46A96676DA";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";

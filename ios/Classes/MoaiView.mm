@@ -192,7 +192,6 @@ namespace MoaiInputDeviceSensorID {
 		AKUReserveInputDeviceSensors	( MoaiInputDeviceID::DEVICE, MoaiInputDeviceSensorID::TOTAL );
 		AKUSetInputDeviceCompass		( MoaiInputDeviceID::DEVICE, MoaiInputDeviceSensorID::COMPASS,		"compass" );
 		AKUSetInputDeviceLevel			( MoaiInputDeviceID::DEVICE, MoaiInputDeviceSensorID::LEVEL,		"level" );
-		AKUSetInputDeviceLocation		( MoaiInputDeviceID::DEVICE, MoaiInputDeviceSensorID::LOCATION,		"location" );
 		AKUSetInputDeviceTouch			( MoaiInputDeviceID::DEVICE, MoaiInputDeviceSensorID::TOUCH,		"touch" );
 		
 		CGRect screenRect = [[ UIScreen mainScreen ] bounds ];
@@ -208,10 +207,10 @@ namespace MoaiInputDeviceSensorID {
 		
 		mAnimInterval = 1; // 1 for 60fps, 2 for 30fps
 		
-		mLocationObserver = [[[ LocationObserver alloc ] init ] autorelease ];
+//		mLocationObserver = [[[ LocationObserver alloc ] init ] autorelease ];
 		
-		[ mLocationObserver setHeadingDelegate:self :@selector ( onUpdateHeading: )];
-		[ mLocationObserver setLocationDelegate:self :@selector ( onUpdateLocation: )];
+//		[ mLocationObserver setHeadingDelegate:self :@selector ( onUpdateHeading: )];
+//		[ mLocationObserver setLocationDelegate:self :@selector ( onUpdateLocation: )];
 		
 		UIAccelerometer* accel = [ UIAccelerometer sharedAccelerometer ];
 		accel.delegate = self;
@@ -223,6 +222,11 @@ namespace MoaiInputDeviceSensorID {
 		
 		// add in the particle presets
 		ParticlePresets ();
+		
+		// Set resolution for our game
+		AKURunString([[NSString stringWithFormat:@"SCREEN_RESOLUTION_X = %i", (int)screenHeight] cStringUsingEncoding:NSASCIIStringEncoding]);
+		AKURunString([[NSString stringWithFormat:@"SCREEN_RESOLUTION_Y = %i", (int)screenWidth] cStringUsingEncoding:NSASCIIStringEncoding]);
+
 	}
 	
 	//----------------------------------------------------------------//

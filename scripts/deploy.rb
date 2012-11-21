@@ -162,21 +162,33 @@ class Deploy
   end
   
   def used_assets
-    find_assets if !self.assets
-    used = []
-    self.assets.each do |key,asset|
-      if asset[:type] == RESOURCE_TYPE_IMAGE || asset[:type] == RESOURCE_TYPE_TILED_IMAGE
-        add_image(key, asset, used)
-      elsif asset[:type] == RESOURCE_TYPE_ANIMATION_FRAMES
-        add_animation_frames(key, asset, used)
-        add_animation_sounds(key, asset, used)
-      elsif asset[:type] == RESOURCE_TYPE_FONT
-        add_font(key, asset, used)
-      elsif asset[:type] == RESOURCE_TYPE_SOUND
-        add_sound(key,asset,used)
-      end
+    directories = []
+    files = []
+    directory_structure(self.gfx_dir, directories)
+    all_files_on(self.gfx_dir, files)
+    directories.each do |dir|
+      all_files_on(dir + '/', files)
     end
-    return used.uniq
+    
+    files.each do |f|
+      f.gsub!(self.gfx_dir, '')
+    end
+    files.uniq
+    # find_assets if !self.assets
+    # used = []
+    # self.assets.each do |key,asset|
+    #   if asset[:type] == RESOURCE_TYPE_IMAGE || asset[:type] == RESOURCE_TYPE_TILED_IMAGE
+    #     add_image(key, asset, used)
+    #   elsif asset[:type] == RESOURCE_TYPE_ANIMATION_FRAMES
+    #     add_animation_frames(key, asset, used)
+    #     add_animation_sounds(key, asset, used)
+    #   elsif asset[:type] == RESOURCE_TYPE_FONT
+    #     add_font(key, asset, used)
+    #   elsif asset[:type] == RESOURCE_TYPE_SOUND
+    #     add_sound(key,asset,used)
+    #   end
+    # end
+    # return used.uniq
   end
 
   def missing(file)
@@ -249,8 +261,8 @@ class Deploy
     # --------------------------------------------------------------------------------------------------------
     # Resize files
     # --------------------------------------------------------------------------------------------------------
-    resize_ratio_x = screen_resolution_x / WORLD_RESOLUTION_X.to_f
-    resize_ratio_y = screen_resolution_y / WORLD_RESOLUTION_Y.to_f
+    # resize_ratio_x = screen_resolution_x / WORLD_RESOLUTION_X.to_f
+    # resize_ratio_y = screen_resolution_y / WORLD_RESOLUTION_Y.to_f
     
     pbar = ProgressBar.new("Resizing imgs", used.size)
     used.each do |f|

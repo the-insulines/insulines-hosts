@@ -1,1 +1,3 @@
-../../builds/demo/ios
+../scripts/assets/
+../scripts/src/
+./main/
