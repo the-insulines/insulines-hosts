@@ -263,30 +263,30 @@ class Deploy
     # --------------------------------------------------------------------------------------------------------
     # resize_ratio_x = screen_resolution_x / WORLD_RESOLUTION_X.to_f
     # resize_ratio_y = screen_resolution_y / WORLD_RESOLUTION_Y.to_f
-    
-    pbar = ProgressBar.new("Resizing imgs", used.size)
-    used.each do |f|
-      if f.match('png')
-        # Resize image
-        image = Magick::Image.read(assets_dir + f).first
-        image.resize!(0.5)
-        image.write(assets_dir + f)
-      end
-      pbar.inc
-    end
-    puts ''
+    # 
+    # pbar = ProgressBar.new("Resizing imgs", used.size)
+    # used.each do |f|
+    #   if f.match('png')
+    #     # Resize image
+    #     image = Magick::Image.read(assets_dir + f).first
+    #     image.resize!(0.5)
+    #     image.write(assets_dir + f)
+    #   end
+    #   pbar.inc
+    # end
+    # puts ''
     
     # --------------------------------------------------------------------------------------------------------
     # Optimize images
     # --------------------------------------------------------------------------------------------------------
-    pbar = ProgressBar.new("Optimize imgs", used.size)
-    used.each do |f|
-      if f.match('png')
-        system("./pngquant --ext .png -f " + assets_dir + f)
-      end
-      pbar.inc
-    end
-    puts ''
+    # pbar = ProgressBar.new("Optimize imgs", used.size)
+    # used.each do |f|
+    #   if f.match('png')
+    #     system("./pngquant --ext .png -f " + assets_dir + f)
+    #   end
+    #   pbar.inc
+    # end
+    # puts ''
   end
 
   def update_code

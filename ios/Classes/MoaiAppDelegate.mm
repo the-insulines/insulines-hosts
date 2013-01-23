@@ -132,6 +132,10 @@
 		AKUFinalize ();
 	}
 
+	- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+		AKUSoftReleaseGfxResources(100);
+	}
+
 	//----------------------------------------------------------------//
 	#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_4_1
 		

@@ -4,8 +4,8 @@
 -- All Rights Reserved. 
 -- http://quov.is // http://theinsulines.com
 --==============================================================
-DEFAULT_ASSETS_PATH = './'
--- SOUND_ENGINE = 'fmod'
+DEFAULT_ASSETS_PATH = './assets/'
+SOUND_ENGINE = 'untz'
 -- SCREEN_RESOLUTION_Y = SCREEN_RESOLUTION_X * ( 320 / 480)
 
 -- if SCREEN_RESOLUTION_X == 1024 * 2 then
